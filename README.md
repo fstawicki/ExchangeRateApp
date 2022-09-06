@@ -10,5 +10,5 @@ https://exchangemoneyapp.netlify.app/
 
 In project I used:   
 
-:point_right: axios
+:point_right: axios    
 :point_right: SCSS
