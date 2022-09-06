@@ -27,12 +27,12 @@ function App() {
 
   useEffect(() => {
 
-    // axios(`https://v6.exchangerate-api.com/v6/89a1c3edb699e2ebb0bfcd6d/pair/${curr1}/${curr2}`)
-    //   .then(response => {
-    //     const data = response.data.conversion_rate;
-    //     setRate(data);
-    //     setResult(ammount1*data);
-    //   })
+    axios(`https://v6.exchangerate-api.com/v6/89a1c3edb699e2ebb0bfcd6d/pair/${curr1}/${curr2}`)
+      .then(response => {
+        const data = response.data.conversion_rate;
+        setRate(data);
+        setResult(ammount1*data);
+      })
 
   },[curr1, curr2, ammount1])
 
@@ -44,7 +44,7 @@ function App() {
         <p className="info">Choose the currency and amount to get the exchange rate.</p>
         <div className="formContainer">
           <div className="currencyContainer">
-            <select onChange={changeFirstCurr}>
+            <select onChange={changeFirstCurr} defaultValue="EUR">
               <option value="AED">AED</option>
               <option value="ARS">ARS</option>
               <option value="AUD">AUD</option>
@@ -60,7 +60,7 @@ function App() {
               <option value="DKK">DKK</option>
               <option value="DOP">DOP</option>
               <option value="EGP">EGP</option>
-              <option value="EUR" selected>EUR</option>
+              <option value="EUR">EUR</option>
               <option value="FJD">FJD</option>
               <option value="GBP">GBP</option>
               <option value="GTQ">GTQ</option>
@@ -104,7 +104,7 @@ function App() {
             <p className="result">exchange rate: {rate}</p>
           </div>
           <div className="currencyContainer">
-            <select id="currency-one" onChange={changeSecondCurr}>
+            <select onChange={changeSecondCurr} defaultValue="PLN">
               <option value="AED">AED</option>
               <option value="ARS">ARS</option>
               <option value="AUD">AUD</option>
@@ -142,7 +142,7 @@ function App() {
               <option value="PEN">PEN</option>
               <option value="PHP">PHP</option>
               <option value="PKR">PKR</option>
-              <option value="PLN" selected>PLN</option>
+              <option value="PLN">PLN</option>
               <option value="PYG">PYG</option>
               <option value="RON">RON</option>
               <option value="RUB">RUB</option>
